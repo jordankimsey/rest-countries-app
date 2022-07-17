@@ -16,7 +16,8 @@ const SearchBar = () => {
   return (
     <FormControl
       sx={{
-        mt: 3,
+        // mt: 4,
+        borderRadius: 2,
         bgcolor:
           currentMode === 'light'
             ? 'darkTextLightElements.main'
@@ -26,6 +27,7 @@ const SearchBar = () => {
       variant='outlined'
     >
       <Input
+        size='medium'
         placeholder='Search for a country'
         id='country'
         fullWidth
@@ -33,10 +35,8 @@ const SearchBar = () => {
         inputProps={{
           sx: {
             '&::placeholder': {
-              color:
-                currentMode === 'light'
-                  ? 'lightModeText.main'
-                  : 'darkTextLightElements.main',
+              color: currentMode === 'light' ? 'lightModeText.main' : 'white',
+              fontWeight: 600,
             },
           },
         }}
@@ -54,11 +54,13 @@ const SearchBar = () => {
           </InputAdornment>
         }
         sx={{
-          p: 1,
+          p: 1.4,
           color:
             currentMode === 'light'
               ? 'lightModeText.main'
               : 'darkTextLightElements.main',
+          boxShadow: 1,
+        
         }}
       />
     </FormControl>

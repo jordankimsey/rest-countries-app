@@ -35,6 +35,7 @@ const theme = createTheme({
     fontFamily: ['Nunito Sans', 'sans-serif'].join(','),
     h4: {
       fontWeight: 800,
+      fontSize: '22px'
     },
     body1: {
       fontWeight: 300,
@@ -42,6 +43,7 @@ const theme = createTheme({
     subtitle1: {
       fontWeight: 600,
     },
+    
 },
 });
 

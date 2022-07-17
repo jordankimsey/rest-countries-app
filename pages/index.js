@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Header from './components/Header';
-import { Container, Box } from '@mui/material';
+import { Container, Box, Grid, Item } from '@mui/material';
 import { useStateContext } from './context/ContextProvider';
 import SearchBar from './components/SearchBar';
 import FilterRegion from './components/FilterRegion';
+import CountryCard from './components/CountryCard';
 
 // sx={{ color: currentMode === 'light' ? 'red' : 'green' }}
 export default function Home() {
@@ -27,11 +28,28 @@ export default function Home() {
                 : 'darkModeBackground.main',
           }}
         >
-          <Container>
-            <SearchBar />
-            <Box mt={5}>
+          <Container
+            sx={{
+              pt: 3,
+              display: { sm: 'flex' },
+              justifyContent: 'space-between',
+            }}
+          >
+            <Box sx={{ width: { sm: '400px' } }}>
+              <SearchBar />
+            </Box>
+            <Box mt={{ xs: 3, sm: 0 }}>
               <FilterRegion />
             </Box>
+            
+          </Container>
+          <Container>
+            <Grid container columnSpacing={5} mt={5}>
+              <Grid item xs={12} sm={6} md={3}>
+                <CountryCard country={ ''} />
+              </Grid>
+            
+            </Grid>
           </Container>
         </Box>
       </main>
